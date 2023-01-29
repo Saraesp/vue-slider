@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[activeSlide].image” :alt="slides[activeSlide].title" />
+                    <img :src="slides[activeSlide].image" :alt="slides[activeSlide].title" />
                     <div class="text">
                         <h3>{{ slides[activeSlide].title }}</h3>
                         <p>
@@ -29,8 +29,8 @@
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
-                    <div class="thumb" v-for="(thumb, index) in slides">
-                        <img src="img/01.webp" alt="Svezia" />
+                    <div class="thumb" v-for="(thumb, index) in slides" :class="(activeSlide === index) ? 'active': ''" @click="changeSlide(index)">
+                        <img :src="thumb.image" />
                     </div>
                 </div>
 

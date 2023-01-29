@@ -4,7 +4,7 @@ const {
 
 createApp({
     data(){
-        return {
+        return{
             activeSlide : 0,
             slides: [
                 {
@@ -34,5 +34,11 @@ createApp({
                 }
             ]
         }
-    }
+    },
+    methods: {
+        changeSlide(index){
+            this.activeSlide = index;
+        }
+    },
+    
 }).mount('#app');

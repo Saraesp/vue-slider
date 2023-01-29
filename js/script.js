@@ -35,6 +35,9 @@ createApp({
             ]
         }
     },
+    created(){
+        this.autoScroll();
+    },
     methods: {
         changeSlide(index){
             this.activeSlide = index;
@@ -50,6 +53,11 @@ createApp({
             if(this.activeSlide > this.slides.lenght -1){
                 this.activeSlide = 0;
             }
+        },
+        autoScroll(){
+            setInterval(() => {
+                this.next();
+            }, 3000);
         }
     },
     

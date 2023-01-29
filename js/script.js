@@ -6,6 +6,7 @@ createApp({
     data(){
         return{
             activeSlide : 0,
+            autoPlay : null,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -55,9 +56,13 @@ createApp({
             }
         },
         autoScroll(){
-            setInterval(() => {
+            this.autoPlay = setInterval(() => {
                 this.next();
             }, 3000);
+        },
+        stopAutoScroll(){
+            clearInterval(this.autoPlay)
+            this.autoPlay = null;
         }
     },
     

@@ -38,6 +38,18 @@ createApp({
     methods: {
         changeSlide(index){
             this.activeSlide = index;
+        },
+        next(){
+            this.activeSlide++;
+            if(this.activeSlide > this.slides.lenght -1){
+                this.activeSlide = 0;
+            }
+        },
+        prev(){
+            this.activeSlide--;
+            if(this.activeSlide > this.slides.lenght -1){
+                this.activeSlide = 0;
+            }
         }
     },
     
